@@ -1,0 +1,49 @@
+.normal {
+  font-size:40px;
+  color:#911F2E;
+  text-align: center;
+  animation: fadeIn ease 3s;
+}
+.normallink {
+    font-size:40px;
+    color:#C53346;
+    text-align: center;
+    animation: fadeIn ease 3s;
+  }
+  /* https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08  */
+  .normallink:hover {
+    font-size:40px;
+    color:#911F2E;
+    text-decoration: underline;
+    text-align: center;
+    animation: fadeIn ease 3s;
+  }
+  .quotes {
+    font-size:25px;
+    color:#4D0E16;
+    text-align: center;
+    animation: fadeIn ease 2s;
+  }
+  .quotefrom {
+    font-size:18px;
+    color:#4D0E16;
+    text-align: center;
+    animation: fadeIn ease 2s;
+  }
+  .clickquotes {
+    font-size:25px;
+    color:#911F2E;
+    text-align: center;
+    animation: fadeIn ease 2s;
+  }
+  .clickquotes:hover {
+    font-size:25px;
+    color:#E1BAAC;
+    text-decoration: underline;
+    text-align: center;
+    animation: fadeIn ease 2s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

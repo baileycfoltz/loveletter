@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- by bailey foltz! its 8.12.2021 :)-->
+<!-- if anyone is reading this i KNOW my code is ugly okay i'm so sorry you have to see this
+yes i am embarrassed
+i just didn't want to figure out how to fix the code i figured if it works it works maybe some day i'll go back and fix this but today is not that day
+sorry again -->
+<link rel="stylesheet" type="text/css" href="valentine_stylesheet.css" media="screen"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#lineOne {
+  display: none;
+}
+#quotes {display: block;}
+</style>
+</head>
+<body>
+<body style="background-color:#F5E3DC;padding: 4em 0 0 0">
+
+<p style= "text-align: center">
+<span class="normal">love letter </span>
+<span class="normallink", onclick="firstLine()"><i>reference</i></span> &nbsp;
+<span class="normal"> page</span>
+</p>
+
+<div id="lineOne", class="normal">
+<span class="normallink", onclick="addQ1()"><i>many</i></span> 
+<span class="normallink", onclick="addQ2()"><i>have</i></span> 
+<span class="normallink", onclick="addQ3()"><i>said</i></span> 
+<span class="normallink", onclick="addQ4()"><i>it</i></span> 
+<span class="normallink", onclick="addQ5()"><i>better</i></span> 
+<span class="normallink", onclick="addQ6()"><i>than</i></span> 
+<span class="normallink", onclick="addQ7()"><i>i</i></span> 
+</div>
+
+<div class="quotes">
+
+</div>
+
+<script>
+//there are 63 quotes
+// '<br><br><span class="quotefrom"><br><i>texthere</i><br></span>'
+//for normal text
+// <span class="quotes">TEXTHERE</span>
+//for linking text
+// <span class="clickquotes", onclick="addQ1()">CLICKHERE</span>
+//for the source
+// <span class="quotefrom"><br><i>TEXTHERE</i><br></span>
+//take advantage of <br> and &nbsp; and <i> </i>
+//always begin with a <br> line break
+var quote_1 = '<br><br><span class="quotes">yes yes yes i do </span><span class="clickquotes", onclick="addQ61()">like</span><span class="quotes"> you. i am </span><span class="clickquotes", onclick="addQ14()">afraid</span><span class="quotes"> to write the </span><span class="clickquotes", onclick="addQ52()">stronger</span><span class="quotes"> word.</span><span class="quotefrom"><br><i>virginia woolf, the letters of virginia woolf</i><br></span>'
+var quote_2 = '<br><br><span class="quotes">love between us is<br>speech and </span><span class="clickquotes", onclick="addQ16()">breath</span><span class="quotes">. loving you is<br>a long river </span><span class="clickquotes", onclick="addQ30()">running</span><span class="quotefrom"><br><i>sonia sanchez, haiku [for you], like the singing coming off the drums</i><br></span>'
+var quote_3 = '<br><br><span class="quotes">i am reduced to a thing that wants virginia... with me it is quite stark: </span><span class="clickquotes", onclick="addQ26()">i miss you</span><span class="quotes"> even more than i could have believed, and i was prepared to </span><span class="clickquotes", onclick="addQ37()">miss you</span><span class="quotes"> a good deal.</span><span class="quotefrom"><br><i>vita sackville-west to virginia woolf</i><br></span>'
+var quote_4 = '<br><br><span class="quotes">it’s not love, or tenderness, or affection, it’s life itself, </span><span class="clickquotes", onclick="addQ41()">my life</span><span class="quotes">, that i found when i saw it in your hands, in your mouth and in your breasts. i have the taste of </span><span class="clickquotes", onclick="addQ21()">almonds</span><span class="quotes"> from your </span><span class="clickquotes", onclick="addQ6()">lips</span><span class="quotes"> in my mouth. our worlds have never gone outside. only one mountain can know the core of another mountain.</span><span class="quotefrom"><br><i>frida kahlo to diego rivera</i><br></span>'
+var quote_5 = '<br><br><span class="quotes">i love you while paying attention to external things. at toulouse i simply loved you. tonight i love you on a spring evening. i love you with the </span><span class="clickquotes", onclick="addQ44()">window</span><span class="quotes"> open. you are mine, and things are mine, and my love alters the things around me and the things around me </span><span class="clickquotes", onclick="addQ48()">alter my love</span><span class="quotefrom"><br><i>jean paul sartre to simone jollivet</i><br></span>'
+var quote_6 = '<br><br><span class="quotes">and if the devil was ever to see you, he’d </span><span class="clickquotes", onclick="addQ23()">kiss</span><span class="quotes"> your eyes and </span><span class="clickquotes", onclick="addQ46()">repent</span><span class="quotefrom"><br><i>farouq jwaydeh</i><br></span>'
+var quote_7 = '<br><br><span class="quotes">i sink into </span><span class="clickquotes", onclick="addQ11()">your eyes</span><span class="quotes"> whenever i’m </span><span class="clickquotes", onclick="addQ59()">looking</span><span class="quotes"> at you</span><span class="quotefrom"><br><i>franz kafka, letters to milena</i><br></span>'
+var quote_8 = '<br><br><span class="quotes">this is the saddest letter i’ve ever written. the people i’ve loved never knew that i loved them </span><span class="clickquotes", onclick="addQ53()">deeply</span><span class="quotes">. but i need you to know. i need this desperately. it’s essential that you know it and that you’ll want to </span><span class="clickquotes", onclick="addQ20()">live for me!</span><span class="quotes"> either out of love or </span><span class="clickquotes", onclick="addQ55()">pity</span><span class="quotes">. please understand this.</span><span class="quotefrom"><br><i>gabriela mistral, a letter to doris dana</i><br></span>'
+var quote_9 = '<br><br><span class="quotes">you say: “take care of this dear thing we have.” yes, my love, and you take care of it, too. </span><span class="clickquotes", onclick="addQ4()">don’t lose it;</span><span class="quotes"> i watch over it and take care of it. love is so </span><span class="clickquotes", onclick="addQ25()">delicate</span><span class="quotes">, it breaks easily, or it wears out, or it grows old, it becomes </span><span class="clickquotes", onclick="addQ10()">ugly</span><span class="quotes">, and it becomes a cold habit. take care of it, my love; watch over it</span><span class="quotefrom"><br><i>gabriela mistral, a letter to doris dana</i><br></span>'
+var quote_10 = '<br><br><span class="quotes">don’t make me repeat this as if it were an </span><span class="clickquotes", onclick="addQ17()">obsession</span><span class="quotes">. you’re the most precious person i have, and you’re also </span><span class="clickquotes", onclick="addQ1()">all i have</span><span class="quotes">.</span><span class="quotefrom"><br><i>gabriela mistral, a letter to doris dana</i><br></span>'
+var quote_11 = '<br><br><span class="quotes">every corner of my heart loved you<br>in a field of fields you were the </span><span class="clickquotes", onclick="addQ13()">largest field</span><span class="quotes"><br>in a field of moons you were the </span><span class="clickquotes", onclick="addQ20()">most moons</span><span class="quotefrom"><br><i>anis mojgani, in the pockets of small gods</i><br></span>'
+var quote_12 = '<br><br><span class="quotes">it is not </span><span class="clickquotes", onclick="addQ25()">enough</span><span class="quotes"><br>to say love in arabic<br>you must say<br>be the thing that </span><span class="clickquotes", onclick="addQ15()">buries</span><span class="quotes"> me.</span><span class="quotefrom"><br><i>hala alyan, interactive :: house saints</i><br></span>'
+var quote_13 = '<br><br><span class="quotes">they asked “do you love her to death?”<br>i said “speak of her over my </span><span class="clickquotes", onclick="addQ12()">grave</span><span class="quotes"> and watch how she brings me </span><span class="clickquotes", onclick="addQ56()">back to life</span><span class="quotes">.</span><span class="quotefrom"><br><i>mahmoud darwish</i><br></span>'
+var quote_14 = '<br><br><span class="quotes"> i wish the world were ending tomorrow. then i could take the next train, arrive at your doorstep in vienna, and say: “</span><span class="clickquotes", onclick="addQ13()">come with me</span><span class="quotes">, milena. we are going to love each other without scruples or fear or restraint. because the world is ending tomorrow.” perhaps we don’t love unreasonably because we think we have time, or have to reckon with time. but what if we don’t have time? or what if time, as we know it, is </span><span class="clickquotes", onclick="addQ31()">irrelevant?</span><span class="quotes"> ah, if only the world were ending tomorrow. we could help each other very much.</span><span class="quotefrom"><br><i>franz kafka</i><br></span>'
+var quote_15 = '<br><br><span class="quotes">all the </span><span class="clickquotes", onclick="addQ18()">beauty</span><span class="quotes"> i thought </span><span class="clickquotes", onclick="addQ57()">lost</span><span class="quotes"> in the world is in you<br>and around you</span><span class="quotefrom"><br><i>anaïs nin, je suis le plus malade</i><br></span>'
+var quote_16 = '<br><br><span class="quotes">i have never loved before as i love you, - with such </span><span class="clickquotes", onclick="addQ42()">tenderness</span><span class="quotes"> - to the point of </span><span class="clickquotes", onclick="addQ36()">tears</span><span class="quotes"> - and with such a sense of </span><span class="clickquotes", onclick="addQ33()">radiance</span><span class="quotes">.</span><span class="quotefrom"><br><i>vladimir nabokov, letters to vera</i><br></span>'
+var quote_17 = '<br><br><span class="quotes">my love has made me </span><span class="clickquotes", onclick="addQ33()">selfish</span><span class="quotes">. i cannot </span><span class="clickquotes", onclick="addQ60()">exist</span><span class="quotes"> without you. i am forgetful of everything but seeing you again - my life seems to stop there - i see no further. you have asorb’d me.</span><span class="quotefrom"><br><i>john keats to fanny brawne</i><br></span>'
+var quote_18 = '<br><br><span class="quotes">there are times when my </span><span class="clickquotes", onclick="addQ19()">longing</span><span class="quotes"> for you </span><span class="clickquotes", onclick="addQ16()">overwhelms</span><span class="quotes"> me.</span><span class="quotefrom"><br><i>franz kafka, letters to felice</i><br></span>'
+var quote_19 = '<br><br><span class="quotes">love makes us </span><span class="clickquotes", onclick="addQ40()">"heavenly"</span><span class="quotes"> without our </span><span class="clickquotes", onclick="addQ34()">trying</span><span class="quotes"> in the least</span><span class="quotefrom"><br><i>emily dickinson to mary bowles</i><br></span>'
+var quote_20 = '<br><br><span class="quotes">i wonder if you talked about me, as you went </span><span class="clickquotes", onclick="addQ28()">home</span><span class="quotes">, or thought of me when the </span><span class="clickquotes", onclick="addQ39()">moon</span><span class="quotes"> rose,</span><span class="quotefrom"><br><i>virginia woolf to vanessa bell</i><br></span>'
+var quote_21 = '<br><br><span class="quotes">my </span><span class="clickquotes", onclick="addQ54()">kingdom</span><span class="quotes"> for a </span><span class="clickquotes", onclick="addQ23()">kiss</span><span class="quotes"> upon her shoulder</span><span class="quotefrom"><br><i>jeff buckley, lover, you should have come over</i><br></span>'
+var quote_22 = '<br><br><span class="quotes">i am that </span><span class="clickquotes", onclick="addQ3()">clumsy</span><span class="quotes"> human, always loving, loving, loving. and </span><span class="clickquotes", onclick="addQ13()">never leaving</span><span class="quotefrom"><br><i>frida kahlo</i><br></span>'
+var quote_23 = '<br><br><span class="quotes">you are always new. the last of your kisses was ever the sweetest; the last smile the brightest; the last movement the </span><span class="clickquotes", onclick="addQ24()">gracefullest</span><span class="quotes">. when you pass’d my window home yesterday, i was fill’d with as much admiration as if i had then seen you for the </span><span class="clickquotes", onclick="addQ47()">first time</span><span class="quotes">… even if you did not love me i could not help an entire </span><span class="clickquotes", onclick="addQ58()">devotion</span><span class="quotes"> to you.</span><span class="quotefrom"><br><i>john keats to fanny brawne</i><br></span>'
+var quote_24 = '<br><br><span class="quotes">i have a serious </span><span class="clickquotes", onclick="addQ11()">affliction</span><span class="quotes">. loving you </span><span class="clickquotes", onclick="addQ14()">forever</span><span class="quotes">.</span><span class="quotefrom"><br><i>richard feyman, to arline feynman</i><br></span>'
+var quote_25 = '<br><br><span class="quotes">as one needs happiness so have i needed love; that is the deepest need of the </span><span class="clickquotes", onclick="addQ55()">human spirit</span><span class="quotes">. and as i love you utterly, so have you now become the whole world of my spirit. it is beside and beyond anything that you can ever do for me; it lies in what you are, dear love - to me so infinitely </span><span class="clickquotes", onclick="addQ52()">lovely</span><span class="quotes"> that to be near you, to see you, hear you, is now the only happiness, the only life, i know.</span><span class="quotefrom"><br><i>rockwell kent</i><br></span>'
+var quote_26 = '<br><br><span class="quotes">i came in at half past eleven. since then i have been sitting in an easy chair like a </span><span class="clickquotes", onclick="addQ1()">fool</span><span class="quotes">. i could do nothing. i hear nothing but your voice. i am like a fool hearing you call me </span><span class="clickquotes", onclick="addQ49()">"dear."</span><span class="quotes"> i offended two men today by leaving them coolly. i wanted to hear your voice, not theirs. when i am with you i leave aside my contemptuous, suspicious nature. i wish i felt your head on my </span><span class="clickquotes", onclick="addQ21()">shoulder</span><span class="quotes">.</span><span class="quotefrom"><br><i>james joyce</i><br></span>'
+var quote_27 = '<br><br><span class="clickquotes", onclick="addQ19()">perhaphs</span><span class="quotes"> one did not want to be loved so much as to be </span><span class="clickquotes", onclick="addQ48()">understood</span><span class="quotes">.</span><span class="quotefrom"><br><i>george orwell</i><br></span>'
+var quote_28 = '<br><br><span class="quotes">tho i long for the actual </span><span class="clickquotes", onclick="addQ33()">sunlight</span><span class="quotes"> between us i miss you like a home. shine back honey & </span><span class="clickquotes", onclick="addQ49()">think of me</span><span class="quotefrom"><br><i>allen ginsberg to peter orlovsky</i><br></span>'
+var quote_29 = '<br><br><span class="quotes">you engross my thoughts too </span><span class="clickquotes", onclick="addQ4()">entirely</span><span class="quotes"> to allow me to think anything else. you not only employ my mind all day, but you intrude on my sleep. i meet you in every </span><span class="clickquotes", onclick="addQ50()">dream</span><span class="quotes"> and when i wake i cannot close my eyes again for ruminating on </span><span class="clickquotes", onclick="addQ23()">your sweetness</span><span class="quotefrom"><br><i>alexander hamilton to eliza schuyler</i><br></span>'
+var quote_30 = '<br><br><span class="quotes">how good it was to hear your voice. it was so inadequate to try and tell you what it meant. funny it was that i couldn’t say je t’aime and je t’adore as i longed to do, but always </span><span class="clickquotes", onclick="addQ18()">remember</span><span class="quotes"> that i am saying it, that i go to sleep </span><span class="clickquotes", onclick="addQ29()">thinking of you</span><span class="quotefrom"><br><i>eleanor roosevelt to lorena hickok</i><br></span>'
+var quote_31 = '<br><br><span class="quotes">if only you knew how my heart </span><span class="clickquotes", onclick="addQ32()">beaths</span><span class="quotes"> when i think of you and it yearns and pants to gaze, if only for </span><span class="clickquotes", onclick="addQ61()">one second</span><span class="quotes"> upon your lovely face</span><span class="quotefrom"><br><i>angelina weld grimke to mamie burrel</i><br></span>'
+var quote_32 = '<br><br><span class="quotes">i need you more and more, and the great world grows </span><span class="clickquotes", onclick="addQ6()">wider</span><span class="quotes">, and dear ones fewer and fewer, every day that you stay away... my heart is full of you, none other than you is in my thoughts, yet when i seek to say to you something not for the world, words fail me. if you were here - and oh that you were, my susie, we need not talk at all, our eyes would </span><span class="clickquotes", onclick="addQ22()">whisper</span><span class="quotes"> for us, and your hand fast in mine, we would not ask for </span><span class="clickquotes", onclick="addQ58()">language</span><span class="quotefrom"><br><i>emily dickinson to susan huntington gilbert dickinson</i><br></span>'
+var quote_33 = '<br><br><span class="quotes">dearest of all boys,<br>your letter was delightful, red and yellow wine to me; but i am sad and out of sorts. boise, you must not make scenes with me. they kill me, they wreck the leveliness of life. i cannot see you, so greek and  gracious, </span><span class="clickquotes", onclick="addQ2()">distorted</span><span class="quotes"> with </span><span class="clickquotes", onclick="addQ56()">passion</span><span class="quotes">. i cannot listen to your curved lips saying hideous things to me ... you are the </span><span class="clickquotes", onclick="addQ50()">divine</span><span class="quotes"> thing i want, the thing of grace and beauty; but i don’t know how to do it</span><span class="quotefrom"><br><i>oscar wilde to lord alfred douglas</i><br></span>'
+var quote_34 = '<br><br><span class="quotes">i know well that, at this hour, i could as easily forget your name as the food by which i live; nay it were easier to forget the food, which only nourishes my body miserably, than your name, which nourishes both body and </span><span class="clickquotes", onclick="addQ38()">soul</span><span class="quotes">, filling the one and the other with such </span><span class="clickquotes", onclick="addQ62()">sweetness</span><span class="quotes"> that neither weariness nor fear of death is felt by me while memory </span><span class="clickquotes", onclick="addQ56()">preserves</span><span class="quotes"> you in my mind.</span><span class="quotefrom"><br><i>michelangelo to tommaso cavalieri</i><br></span>'
+var quote_35 = '<br><br><span class="quotes">look here vita - throw over your man, and we’ll go to hampton court and dine on the river together and walk in the garden in the </span><span class="clickquotes", onclick="addQ17()">moonlight</span><span class="quotes"> and come home late and have a bottle of wine and get tipsy, and i’ll tell you all the things i have in my head, </span><span class="clickquotes", onclick="addQ45()">millions</span><span class="quotes">, myriads - they won’t stir by day, only by dark on the river. think of that. throw over your man, i say, and come</span><span class="quotefrom"><br><i>virginia woolf to vita sackville-west</i><br></span>'
+var quote_36 = '<br><br><span class="quotes">you are all about me-i seem to </span><span class="clickquotes", onclick="addQ2()">breathe</span><span class="quotes"> you-hear you-feel you in me and of me-what am i doing here? you are away - i have seen you in the train, at the station, driving up, sitting in the lamplight talking, greeting people - washing your hands - and i am here - in your tent - sitting at your table... in the embrace of some big mountains, you would see me down below, deep and shining - and quite fathomless, my dear. you might </span><span class="clickquotes", onclick="addQ61()">drop your heart</span><span class="quotes"> into me and you’d never hear it touch </span><span class="clickquotes", onclick="addQ53()">bottom</span><span class="quotefrom"><br><i>katherine mansfield to john middleton murray</i><br></span>'
+var quote_37 = '<br><br><span class="quotes">dearest - my body is simply crazy with </span><span class="clickquotes", onclick="addQ15()">wanting</span><span class="quotes"> you - if you don’t come tomorrow - i don’t see how i can wait for you - i wonder if your body wants mine the way mine wants yours - the kisses - the hotness - the wetness - all melting together - the being held so tight that it </span><span class="clickquotes", onclick="addQ47()">hurts</span><span class="quotes"> - the strangle and the struggle</span><span class="quotefrom"><br><i>georgia o’keefe to alfred stieglitz</i><br></span>'
+var quote_38 = '<br><br><span class="quotes">your slim gilt soul walks between </span><span class="clickquotes", onclick="addQ40()">passion</span><span class="quotes"> and </span><span class="clickquotes", onclick="addQ27()">poetry</span><span class="quotes">. i know hyacinthus, whom apollo loved so madly, was you in greek days</span><span class="quotefrom"><br><i>oscar wilde to lord alfred douglas</i><br></span>'
+var quote_39 = '<br><br><span class="quotes">in effect it is this: that i love you, dispassionately, so much, so very much, dear fellow, that the blasting little smile you wear on reading this can’t hurt me in the least... and you have fixed my life - however short. you did not light me: i was always a </span><span class="clickquotes", onclick="addQ34()">mad comet</span><span class="quotes">; but you have fixed me. i spun round you a satellite for a month, but i shall swing out soon, a dark star in the orbit where you will </span><span class="clickquotes", onclick="addQ24()">blaze</span><span class="quotes">.</span><span class="quotefrom"><br><i>wilfred owen to siegfried sassoon</i><br></span>'
+var quote_40 = '<br><br><span class="quotes">you are mine by </span><span class="clickquotes", onclick="addQ42()">everything</span><span class="quotes"> in earth and heaven - by every sign and spirit and body... give me every joy and all hope. this is </span><span class="clickquotes", onclick="addQ63()">yours</span><span class="quotes"> to do.</span><span class="quotefrom"><br><i>rose elizabeth cleveland to evangeline simpson</i><br></span>'
+var quote_41 = '<br><br><span class="quotes">you did not need to </span><span class="clickquotes", onclick="addQ6()">creep</span><span class="quotes"> into my heart the way you did. you could have smiled and knowing what you did, you have kept apart from all my inner soul. but you beguiled </span><span class="clickquotes", onclick="addQ38()">deliberately</span><span class="quotes">.</span><span class="quotefrom"><br><i>alice dunbar-nelson to fay jackson robinson</i><br></span>'
+var quote_42 = '<br><br><span class="quotes">i </span><span class="clickquotes", onclick="addQ8()">regret</span><span class="quotes"> that you have been in bed, though not </span><span class="clickquotes", onclick="addQ35()">with me</span><span class="quotefrom"><br><i>vita sackville-west to virginia woolf</i><br></span>'
+var quote_43 = '<br><br><span class="quotes">we cannot help our </span><span class="clickquotes", onclick="addQ7()">nature</span><span class="quotes">, as god has created it. but i have always thought you and i belonged </span><span class="clickquotes", onclick="addQ37()">together</span><span class="quotes">.</span><span class="quotefrom"><br><i>greta garbo to mimi pollak</i><br></span>'
+var quote_44 = '<br><br><span class="quotes">because the bird </span><span class="clickquotes", onclick="addQ30()">flew</span><span class="quotes"> before there was a word for </span><span class="clickquotes", onclick="addQ51()">flight</span><span class="quotes">, there will one day be a word for what you and i do.</span><span class="quotefrom"><br><i>marcelo hernandez castillo</i><br></span>'
+var quote_45 = '<br><br><span class="quotes">every atom of your flesh is as </span><span class="clickquotes", onclick="addQ7()">dear</span><span class="quotes"> to me as </span><span class="clickquotes", onclick="addQ57()">my own</span><span class="quotes">: in pain and sickness it would still be dear</span><span class="quotefrom"><br><i>charlotte bronte, jane eyre</i><br></span>'
+var quote_46 = '<br><br><span class="quotes">in vain i have struggled. it will not do. my feelings will not be </span><span class="clickquotes", onclick="addQ51()">repressed</span><span class="quotes">. you must allow me to tell you how </span><span class="clickquotes", onclick="addQ26()">ardently</span><span class="quotes"> i </span><span class="clickquotes", onclick="addQ39()">admire</span><span class="quotes"> and love you.</span><span class="quotefrom"><br><i>jane austen, pride and prejudice</i><br></span>'
+var quote_47 = '<br><br><span class="quotes">without you, dearest dearest i couldnt see or hear or feel or </span><span class="clickquotes", onclick="addQ29()">think</span><span class="quotes">-or live-i love you so and im never in all our lives going to let us be apart another night. its like begging for </span><span class="clickquotes", onclick="addQ41()">mercy</span><span class="quotes"> of a storm or killing beauty or growing old, </span><span class="clickquotes", onclick="addQ59()">without you</span><span class="quotes">.</span><span class="quotefrom"><br><i>zelda fitzgerald to f. scott fitzgerald</i><br></span>'
+var quote_48 = '<br><br><span class="quotes">i already love in you your beauty, but i am only beginning to love in you that which is </span><span class="clickquotes", onclick="addQ5()">eternal</span><span class="quotes"> and ever </span><span class="clickquotes", onclick="addQ3()">precious</span><span class="quotes"> – your heat, your soul. beauty one could get to know and fall in love with in one hour and cease to love it as speedily; but the soul one must </span><span class="clickquotes", onclick="addQ27()">learn</span><span class="quotes"> to know. believe me, nothing on earth is given without labour, even love, the most beautiful and natural of feelings.</span><span class="quotefrom"><br><i>leo tolstoy to valeria arsenev</i><br></span>'
+var quote_49 = '<br><br><span class="quotes">i am nearly mad about you, as much as one can be mad: i cannot bring together two ideas that you do not interpose yourself </span><span class="clickquotes", onclick="addQ8()">between</span><span class="quotes"> them. i can no longer think of nothing but you. in spite of myself, my imagination </span><span class="clickquotes", onclick="addQ32()">carries me</span><span class="quotes"> to you. i grasp you, i kiss you, i caress you, a thousand of the most amorous caresses take possession of me. as for my heart, there you will always be-very much so</span><span class="quotefrom"><br><i>honoré de balzac to éveline hanska</i><br></span>'
+var quote_50 = '<br><br><span class="quotes">you have devoured </span><span class="clickquotes", onclick="addQ54()">everything</span><span class="quotes">. i feel foolish and happy as soon as i let myself think of you. i whirl round in a delicious dream in which in one instant i live a thousand years... overcome with love, feeling love in every pore, living only for love, and seeing oneself consumed by griefs, and caught in a thousand spiders threads... i see you, as i did yesterday, beautiful, astonishingly beautiful. yesterday, during the whole evening, i said to myself, </span><span class="clickquotes", onclick="addQ43()">"she is mine!"</span><span class="quotes"> ah! the angels are not as happy in paradise as i was yesterday!</span><span class="quotefrom"><br><i>honoré de balzac to éveline hanska</i><br></span>'
+var quote_51 = '<br><br><span class="quotes">if i loved you </span><span class="clickquotes", onclick="addQ7()">less</span><span class="quotes">, i might be able to talk about it </span><span class="clickquotes", onclick="addQ46()">more</span><span class="quotes">.</span><span class="quotefrom"><br><i>jane austen, emma</i><br></span>'
+var quote_52 = '<br><br><span class="quotes">my </span><span class="clickquotes", onclick="addQ10()">darling</span><span class="quotes"><br>you will never be unloved by me<br>you are too well </span><span class="clickquotes", onclick="addQ44()">tangled</span><span class="quotes"> in my soul.</span><span class="quotefrom"><br><i>atticus</i><br></span>'
+var quote_53 = '<br><br><span class="quotes">i will love you if i </span><span class="clickquotes", onclick="addQ60()">never</span><span class="quotes"> see you again, and i will love you if i see you </span><span class="clickquotes", onclick="addQ36()">every tuesday</span><span class="quotefrom"><br><i>lemony snicket, the beatrice letters</i><br></span>'
+var quote_54 = '<br><br><span class="quotes">i exist in two places, </span><span class="clickquotes", onclick="addQ12()">here</span><span class="quotes"> and </span><span class="clickquotes", onclick="addQ62()">where you are</span><span class="quotes">.</span><span class="quotefrom"><br><i>margaret atwood, corpse song</i><br></span>'
+var quote_55 = '<br><br><span class="quotes">i like </span><span class="clickquotes", onclick="addQ63()">my body</span><span class="quotes"> when<br>it is with </span><span class="clickquotes", onclick="addQ9()">your body</span><span class="quotefrom"><br><i>e.e. cummings</i><br></span>'
+var quote_56 = '<br><br><span class="quotes">if there is life after the earth-life,<br>will you come with me? even then?<br>since we’re bound to be </span><span class="clickquotes", onclick="addQ17()">something</span><span class="quotes">,<br>why not </span><span class="clickquotes", onclick="addQ43()">together</span><span class="quotes">.</span><span class="quotefrom"><br><i>mary oliver, west wind</i><br></span>'
+var quote_57 = '<br><br><span class="quotes">you are whatever a </span><span class="clickquotes", onclick="addQ35()">moon</span><span class="quotes"> has always meant and whatever a </span><span class="clickquotes", onclick="addQ28()">sun</span><span class="quotes"> will always sing.</span><span class="quotefrom"><br><i>e.e. cummings</i><br></span>'
+var quote_58 = '<br><br><span class="quotes">i don’t know how to write love letters. but i wanted to tell you that my whole being opened up for you. since i fell in love with you everything is transformed and is full of </span><span class="clickquotes", onclick="addQ26()">beauty</span><span class="quotes">… love is like an aroma, like a current, like rain. you know, my sky, you rain on me and i, like the earth, </span><span class="clickquotes", onclick="addQ32()">receive you</span><span class="quotes">.</span><span class="quotefrom"><br><i>frida kahlo to josé bartoli</i><br></span>'
+var quote_59 = '<br><br><span class="quotes">we dream and dream of being seen as we really are and then finally someone looks at us and sees us truly and we fail to measure up.. you looked at me long enough to see something mysterious under all the gruff and bluster. thanks. sometimes you get so </span><span class="clickquotes", onclick="addQ54()">close</span><span class="quotes"> to someone you end up on the </span><span class="clickquotes", onclick="addQ52()">other side</span><span class="quotes"> of them.</span><span class="quotefrom"><br><i>richard silken</i><br></span>'
+var quote_60 = '<br><br><span class="quotes">i love you. </span><span class="clickquotes", onclick="addQ45()">without</span><span class="quotes"> </span><span class="clickquotes", onclick="addQ57()">end</span><span class="quotes">.</span><span class="quotefrom"><br><i>vladimir nabokov, letters to véra</i><br></span>'
+var quote_61 = '<br><br><span class="quotes">the number of hours we have together is actually </span><span class="clickquotes", onclick="addQ30()">not so large</span><span class="quotes">. please linger near the door uncomfortably instead of just </span><span class="clickquotes", onclick="addQ22()">leaving</span><span class="quotes">. please forget your scarf in my life and </span><span class="clickquotes", onclick="addQ38()">come back later</span><span class="quotes"> for it.</span><span class="quotefrom"><br><i>mikko harvey, for m, foundry</i><br></span>'
+var quote_62 = '<br><br><span class="quotes"> since i have no sweet flower to send you, i enclose </span><span class="clickquotes", onclick="addQ31()">my heart</span><span class="quotes">; a little one, sunburnt, half </span><span class="clickquotes", onclick="addQ9()">broken</span><span class="quotes"> sometimes,</span><span class="quotefrom"><br><i>emily dickinson to mary bowles</i><br></span>'
+var quote_63 = '<br><br><span class="quotes">i celebrate myself, and sing myself,<br>and what i assume you shall assume,<br>for </span><span class="clickquotes", onclick="addQ45()">every atom</span><span class="quotes"> belonging to me as good </span><span class="clickquotes", onclick="addQ14()">belongs to you</span><span class="quotes">.</span><span class="quotefrom"><br><i>walt whitman, song of myself</i><br></span>'
+
+function firstLine() {
+  var x = document.getElementById("lineOne");
+x.style.display = "block";
+}
+
+function addQ1() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_1;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+// document.getElementById("quotes").innerHTML = document.getElementById("quotes").innerHTML + 
+// "<span class=quotes><br> quote 1 <br></span>";
+}
+
+function addQ2() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_2;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ3() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_3;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ4() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_4;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ5() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_5;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ6() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_6;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ7() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_7;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ8() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_8;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ9() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_9;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ10() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_10;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ11() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_11;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ12() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_12;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ13() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_13;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ14() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_14;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ15() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_15;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ16() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_16;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ17() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_17;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ18() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_18;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ19() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_19;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ20() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_20;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ21() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_21;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ22() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_22;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ23() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_23;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ24() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_24;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ25() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_25;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ26() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_26;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ27() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_27;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ28() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_28;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ29() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_29;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ30() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_30;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ31() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_31;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ32() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_32;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ33() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_33;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ34() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_34;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ35() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_35;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ36() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_36;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ37() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_37;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ38() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_38;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ39() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_39;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ40() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_40;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ41() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_41;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ42() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_42;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ43() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_43;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ44() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_44;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ45() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_45;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ46() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_46;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ47() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_47;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ48() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_48;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ49() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_49;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ50() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_50;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ51() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_51;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ52() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_52;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ53() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_53;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ54() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_54;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ55() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_55;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ56() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_56;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ57() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_57;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ58() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_58;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ59() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_59;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ60() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_60;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ61() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_61;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ62() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_62;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+function addQ63() {
+var quotes = document.createElement('div')
+quotes.innerHTML = quote_63;
+var quotesEle = document.getElementsByClassName('quotes')[0];
+quotesEle.appendChild(quotes)
+window.scrollTo(0,document.body.scrollHeight);
+}
+</script>
+
+</body>
+</html>
